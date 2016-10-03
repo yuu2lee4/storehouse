@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html{ min-height:100%;}
+		body{ }
+		.div1{width:100%; height:30px; background-color:#324232; position:fixed; top:0; left:0;}
+		.div2{width:300px; height:300px; margin:0 auto;  margin-top:50px;  background-color:pink;}
+		.div3{width:300px; height:50px; margin:0 auto; margin-top:10px; padding-top:10px; border: 10px solid black; background-color:blue;}
+	</style>
+</head>
+
+
+<body>
+
+<div class="div1">
+		1
+</div>
+<div class="div2">
+		2
+</div>
+<div class="div3">
+		3
+</div>
+
+
+</body>
+<script src="../../../JsCssPub/jquery.js"></script>
+<script src="js/autoHeight.js"></script>
+<script>
+
+	$(function(){
+		var odiv=$(".div3").eq(0);
+		var parentH=$(window);
+
+		odiv.autoHeight(parentH);
+		
+		
+
+	})
+	
+</script>	
+</html>

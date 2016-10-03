@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> New Document </title>
+  <style>
+  	.box1{ width:100px; height:100px; margin:0 auto; border:1px solid #000; margin-top:100px; position:relative;}
+  	.box2{ position:absolute; left:0; top:0; width:100px; height:100px; background-color:red;}
+  </style>
+ </head>
+ <body>
+ 	<div class="box1">
+ 		<div class="box2"></div>
+ 	</div>
+ </body>
+<script src="../../../JsCssPub/jquery.js"></script>
+<script src="js/dt.js"></script>
+<script>
+
+	$(function(){
+		$('.box2').dt();
+	})
+	
+</script>	
+</html>

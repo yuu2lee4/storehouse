@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+    <script src="../js/jquery.js"></script>
+    <!--[if IE]>
+    <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="../css/core.css"/>
+    <link rel="stylesheet" href="../css/styles.css"/>
+</head>
+<body>
+    <div class="input_area">输入任意内容：<input class="input" required=""><a href="javascript:" class="clear"></a></div>
+</body>
+    <script>
+//        这个js只是清除输入框内容的，显示叉叉是利用css伪类valid
+        function clear(s){
+            $(s).find(".clear").on("click",function(){
+                $(s).find(".input").val("")
+            })
+        }
+        clear(".input_area");
+    </script>
+</html>

@@ -1,0 +1,14 @@
+*{margin: 0;padding: 0;}
+.myselect{width: 235px;height:auto;margin:0 auto;text-indent: .3em;;
+    border: 1px solid #a9a9a9;
+    cursor: pointer;z-index: 101;color: #656565;font-size: 12px;font-family: "宋体"}
+ .show_opt{width: inherit;height: auto;line-height: 25px;position: relative;/*top: 0px;left: 155px*/;
+}
+ .moren{width: 235px;margin: 0px; background: url("../images/b_sec.png") no-repeat right;}
+ .s_ul{width: inherit;height: auto;border: 1px solid #a9a9a9;border-bottom: 0px;/*background-color: white;;*/
+    position: absolute;top: 25px;left: -1px;display: none;}
+ .s_ul li{width: 235px;height:auto;line-height: 25px;border-bottom:1px solid #a9a9a9;list-style: none;}
+ .close{display: none;}
+ .open{display: block;}
+ .in_hover{background-color:#f4f4f4; }
+ .out_hover{background-color: white}

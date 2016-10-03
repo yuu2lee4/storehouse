@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{ width:100px; height:100px; border:1px solid #000; margin:10px;}
+	</style>
+</head>
+<body>
+	<div id="div">
+	1
+	</div>
+	<div class="box1">2</div>
+
+	<div class="box1" id="div2">3 <div>haha <div>haha2</div></div></div>
+	<div class="box1 box2" id="div3">4</div>
+	<span class="box1">5</span>
+</body>
+</html>
+<script src="lightJQ.js"></script>
+<script>
+var obja=select1('#div2>div');
+
+for (var i = 0; i < obja.length; i++) {
+	obja[i].style.background="red"
+};
+
+	function select1(str,oparent){
+		if(!str)return;
+		oparent=toArray(oparent||document);
+		var elarr=str.split(' ');
+		for (var i = 0; i < elarr.length; i++) {
+			oparent=find(oparent,elarr[i]);
+		};
+		return oparent;
+	}
+	function find(oparent,elstr){
+		var elarr=elstr.split('>');
+		var arr=[];
+		console.log(elarr);
+		for (var i = 0; i < oparent.length; i++) {
+			arr=arr.concat(get(oparent[i],elarr[0]));
+			console.log(arr);
+		};
+		if(elarr[1]){
+			console.log(elarr[1]);
+			arr=children(arr,elarr[1]);
+		}
+		console.log(arr);
+		return arr;
+	}
+	function get(oparent,str){
+		var re=/[a-z]+|[.#][\w-]+/ig;
+		var elarr=str.match(re);
+		console.log(elarr);
+		var el;
+		switch( elarr[0].charAt(0) ){
+			case '#': //id
+			
+				el=toArray(oparent.getElementById(elarr[0].substring(1)));
+			
+			break;
+			case '.': //class
+			
+				//elarr : .box
+				
+				el = getByClass(elarr[0].substring(1),oparent);
+			
+			break;
+			default: //tag
+			
+				el= toArray(oparent.getElementsByTagName(elarr[0]));
+			
+			break;
+		}
+		console.log(el);
+		for (var i = 1; i < elarr.length; i++) {
+			console.log(elarr);
+			el=filter(el,elarr[i]);
+		};
+		return el;
+
+	}
+	function children(oparent,str){
+		var re=/[a-z]+|[.#][\w-]+/ig;
+		var elarr=str.match(re);
+		var arr=[];
+		console.log(elarr);
+		for (var i = 0; i < oparent.length; i++) {
+			arr=arr.concat(toArray(oparent[i].children));
+		};
+		console.log(arr);
+		for (var i = 0; i < elarr.length; i++) {
+			arr=filter(arr,elarr[i]);
+		};
+		return arr;
+	}
+	function filter(obj,str){
+		var arr=[];
+		switch( str.charAt(0) ){
+			case '#': //id
+				for (var i = 0; i < obj.length; i++) {
+					if(obj[i].id==str.substring(1)){
+						arr.push(obj[i]);
+						break;
+					}
+				};
+			
+			break;
+			case '.': //class
+				for (var i = 0; i < obj.length; i++) {
+					if(hasClass(obj[i],str.substring(1))){
+						arr.push(obj[i]);
+					}
+				};
+			break;
+			default: //tag
+				for (var i = 0; i < obj.length; i++) {
+					if(obj[i].tagName.toLowerCase()==str){
+						arr.push(obj[i]);
+					}
+				};
+			
+			break;
+		}
+		return arr;
+	}
+	function hasClass(obj,sClass){
+		
+		var re = new RegExp('(^|\\s)'+sClass+'(\\s|$)');
+		if( re.test(obj.className)){
+			return true;
+		}
+
+		return false;	
+		
+	}
+	function getByClass(sClass,parent){
+		var aEles = (parent||document).getElementsByTagName('*');
+		var arr = [];
+		
+		for(var i=0;i<aEles.length;i++){
+			if(hasClass(aEles[i],sClass)){
+				arr.push( aEles[i] );
+			}
+		}
+		return arr;
+	}
+	function toArray(elem){
+		var arr = [];
+		if(!elem.length){
+			arr.push(elem);
+			return arr;
+		}
+		for(var i=0;i<elem.length;i++){
+			arr.push( elem[i] );
+		}
+		return arr;
+	}
+</script>

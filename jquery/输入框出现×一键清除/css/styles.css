@@ -1,0 +1,4 @@
+.input_area{position: relative;}
+.input { margin: 0; border: 1px solid #beceeb;height:28px;line-height: 28px;width: 200px}
+.clear { display: none; position: absolute; width: 22px; height: 22px; background: url(../image/clear.png) no-repeat; outline: none;left: 260px;top:7px}
+.input:valid + .clear { display: inline; }

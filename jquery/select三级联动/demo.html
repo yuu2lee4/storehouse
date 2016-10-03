@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>简单实用的省市区3级联动js特效</title>
+</head>
+<body>
+ <div class="control-group">
+  <label class="control-label" for="location_p">详细地址</label>
+  <div class="controls">
+    <select name="location_p" id="location_p">
+    </select>
+    <select name="location_c" id="location_c">
+    </select>
+    <select name="location_a" id="location_a">
+    </select>
+  </div>
+</div> 
+</body>
+<script src="js/region_select.js"></script>
+<script type="text/javascript">
+  new PCAS('location_p', 'location_c', 'location_a', '广东省', '', '');
+</script>
+</html>

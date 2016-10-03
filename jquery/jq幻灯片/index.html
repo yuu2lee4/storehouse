@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>幻灯片</title>
+	<link rel="stylesheet" href="css/core.css">
+	<link rel="stylesheet" href="css/slider.css">
+</head>
+<body>
+	<div class="slider-container">
+	    <ul class="slider-wrapper clear">
+			<li class="slider-slide"><a href="http://www.miaov.com/"><img src="images/1.jpg" alt="广告一" /></a></li>
+			<li class="slider-slide"><a href="http://www.miaov.com/"><img src="images/2.jpg" alt="广告二" /></a></li>
+			<li class="slider-slide"><a href="http://www.miaov.com/"><img src="images/3.jpg" alt="广告三" /></a></li>
+			<li class="slider-slide"><a href="http://www.miaov.com/"><img src="images/4.jpg" alt="广告四" /></a></li>
+			<li class="slider-slide"><a href="http://www.miaov.com/"><img src="images/5.jpg" alt="广告五" /></a></li>
+		</ul>
+		<div class="slider-pagination">
+	    	<span class="slider-pagination-switch active">1</span>
+	        <span class="slider-pagination-switch">2</span>
+	        <span class="slider-pagination-switch">3</span>
+	        <span class="slider-pagination-switch">4</span>
+	        <span class="slider-pagination-switch">5</span>
+	    </div>
+	    <a href="javascript:;" class="slider-arrow slider-arrow-left"></a>
+	    <a href="javascript:;" class="slider-arrow slider-arrow-right"></a>
+	</div>
+</body>
+</html>
+<script src="../../../JsCssPub/jquery.js"></script>
+<script src="js/slider-0.0.2.js"></script>
+<script>
+  $('.slider-container').slider({arrow:true,pagination:true});
+</script>

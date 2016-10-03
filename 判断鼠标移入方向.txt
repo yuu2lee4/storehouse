@@ -1,0 +1,6 @@
+function dir(a, b)
+        {
+            var c = a.width(), d = a.height(), e = (b.x - a.offset().left - c / 2) * (c > d ? d / c : 1), 
+            f = (b.y - a.offset().top - d / 2) * (d > c ? c / d : 1), g = Math.round((Math.atan2(f, e) * (180 / Math.PI) + 180) / 90 + 3) % 4;
+            return g;
+        }

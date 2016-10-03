@@ -1,0 +1,10 @@
+.slider-container{ width:470px; height: 150px; position: relative; overflow:hidden;}
+.slider-wrapper{ position: absolute; top: 0px; left: 0px;}
+.slider-slide{float: left;}
+.slider-slide img {width: 470px; height: 150px; }
+.slider-pagination{ position: absolute; right: 5px; bottom: 5px;}
+.slider-pagination-switch{ float: left; width: 20px; height: 20px; margin-right: 3px; display: inline; cursor: pointer; background: #fcf2cf; color: #d94b01; text-align: center; line-height: 20px;}
+.slider-pagination-switch.active {font-weight: bold; color: #fff; background: #ffb442;}
+.slider-arrow{ position: absolute; width: 20px; height: 20px; top: 50%; margin-top: -10px; background-color: red;}
+.slider-arrow-left{ left: 0;}
+.slider-arrow-right{ right: 0;}

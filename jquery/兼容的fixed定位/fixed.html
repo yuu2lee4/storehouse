@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>兼容的fixed定位</title>
+    <!--公共载入-->
+    <link rel="stylesheet" href="../../../JsCssPub/core.css"/>
+    <script type="text/javascript" src="../../../JsCssPub/jquery.js"></script>
+    <style type="text/css">
+        /*附加信息*/
+        .samplay_list{ height: 10000px;}
+        .m_bar a{color: #fff;}
+
+        /*定位开始*/
+        .g_fixed_box{width: 102px; height: 218px; position: fixed; top:250px; right:50%; margin-left: 520px; z-index: 11; background: #f2f2f2;}
+        .m_bar{position: relative; z-index: 3; background:#373434}
+        html body{_background-image:url(about:blank);_background-attachment:fixed}
+        .g_fixed_box{_position: absolute; _top:expression(eval(document.documentElement.scrollTop)); _margin-top:200px;}
+    </style>
+</head>
+<body>
+<div class="samplay_list"></div>
+
+<!--内容区开始-->
+<div class="g_fixed_box">
+    <div class="m_bar">
+        <ul>
+            <li><a href="">楼层一</a></li>
+            <li><a href="">楼层二</a></li>
+            <li><a href="">楼层三</a></li>
+            <li><a href="">楼层四</a></li>
+        </ul>
+    </div>
+</div>
+<!--内容区结束-->
+</body>
+</html>

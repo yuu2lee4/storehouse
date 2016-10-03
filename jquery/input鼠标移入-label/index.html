@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.inp_wraper{ position:relative;}
+		.inp_wraper label{ position:absolute; left: 4px; top:3px;}
+		::-ms-clear{display: none;}   /*去除ie10、11text input的xx */
+		::-ms-reveal{display: none;} /*去除ie10、11pass input的小眼睛 */
+	</style>
+</head>
+<body>
+	<div class="inp_wraper">
+		<input type="text" id="aa" class="inp">
+		<label for="aa" class="inp-val">点击试试</label>
+	</div>
+	<div class="inp_wraper">
+		<input type="text" id="aa" class="inp">
+		<label for="aa" class="inp-val">点击试试</label>
+	</div>
+</body>
+<script src="../../../JsCssPub/jquery.js"></script>
+<script src="js/inpVal.js"></script>
+<script>
+    var inp=$('.inp_wraper');
+    inp.eq(0).inpVal();
+    inp.eq(1).inpVal({mode:'placeholder'});
+</script>
+</html>
